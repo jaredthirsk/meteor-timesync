@@ -46,10 +46,8 @@ var attempts = 0;
 // Only use Meteor.absoluteUrl for Cordova; see
 // https://github.com/meteor/meteor/issues/4696
 // https://github.com/mizzao/meteor-timesync/issues/30
-var syncUrl = "/_timesync";
-if (Meteor.isCordova) {
-  syncUrl = Meteor.absoluteUrl("_timesync");
-}
+// Jared's fork: use absoluteUrl always, so it works when hosted in sub-directories
+var syncUrl = Meteor.absoluteUrl("_timesync");
 
 var updateOffset = function() {
   var t0 = Date.now();
