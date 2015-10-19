@@ -1,7 +1,7 @@
 Package.describe({
   name: "jaredthirsk:timesync",
   summary: "NTP-style time synchronization between server and client",
-  version: "0.3.4_4",
+  version: "0.3.4_5",
   git: "https://github.com/jaredthirsk/meteor-timesync.git"
 });
 

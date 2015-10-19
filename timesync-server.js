@@ -1,7 +1,7 @@
 // Use rawConnectHandlers so we get a response as quickly as possible
 // https://github.com/meteor/meteor/blob/devel/packages/webapp/webapp_server.js
 
-WebApp.rawConnectHandlers.use(Meteor.absoluteUrl('_timesync').substring(Meteor.absoluteUrl().substring(0, Meteor.absoluteUrl().length - 1).lastIndexOf('/')),
+WebApp.rawConnectHandlers.use(Meteor.absoluteUrl('_timesync').substring(Meteor.absoluteUrl().split('/', 3).join('/').length),
   function(req, res, next) {
     // Never ever cache this, otherwise weird times are shown on reload
     // http://stackoverflow.com/q/18811286/586086
